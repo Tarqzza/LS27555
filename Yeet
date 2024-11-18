@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Itim&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        body {
+            background-color: #f2f2f2;
+            font-size: 16px;
+        }
+
+        .item-H {
+            grid-area: header;
+            height: 120px;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            background-color: #333;
+            background-image: url('image/logo.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .item-L {
+            grid-area: lside;
+            background-color: #2a2a2a;
+            color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .item-L:hover {
+            transform: translateX(-10px);
+        }
+
+        .item-L a {
+            color: #ddd;
+            text-decoration: none;
+            margin: 15px 0;
+            padding: 12px;
+            width: 100%;
+            text-align: center;
+            display: block;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 500;
+            background-color: #444;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .item-L a:hover {
+            background-color: #555;
+            transform: translateY(-5px);
+        }
+
+        .item-M {
+            grid-area: main;
+            display: grid;
+            gap: 30px;
+            padding: 20px;
+            grid-gap: 20px;
+        }
+
+        .item-F {
+            grid-area: footer;
+            background-color: #333;
+            color: #bbb;
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .gridcontainer {
+            display: grid;
+            grid-template-areas:
+                'header header header header header'
+                'lside main main main main'
+                'footer footer footer footer footer';
+            grid-gap: 20px;
+            padding: 10px;
+        }
+
+        .form1 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+        }
+
+        .form2 {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .form2:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .form2 img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .form2 img:hover {
+            transform: scale(1.05);
+        }
+
+        .form2 h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .form2 p {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .form2 .quantity-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .form2 input[type="number"] {
+            width: 60px;
+            height: 40px;
+            padding: 5px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .form2 input[type="number"]:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+        }
+
+        .form2 input[type="submit"] {
+            padding: 10px 25px;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .form2 input[type="submit"]:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+        }
+
+        footer p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #fff;
+        }
+
+        footer address {
+            font-weight: bold;
+        }
+
+        a {
+            color: #4caf50;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #80e27e;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gridcontainer">
+        <div class="item-H item">
+            <h1>Online Shopping Store</h1>
+        </div>
+
+        <div class="item-L item">
+            <b>
+                <p1>Menu</p1>
+            </b> <br>
+            <a href="register.html">Registeration</a>
+        </div>
+
+        <div class="item-M">
+            <h1>Our Products</h1>
+            <form action="https://httpbin.org/get" method="GET">
+                <div class="form1">
+                    <div class="form2">
+                        <img src="image/coke.jpeg"> <br>
+                        <h2>Coke</h2>
+                        <p>฿89.00 /packs</p>
+                        <div class="quantity-container">
+                            <label for="amount">จำนวน :</label>
+                            <input type="number" id="amount" name="coca_cola" min="1" max="100">
+                        </div>
+                        <input type="submit" value="Add to cart">
+                    </div>
+
+                    <div class="form2">
+                        <img src="image/nescafe.jpeg"> <br>
+                        <h2>Nescafe</h2>
+                        <p>฿55 /Piece</p>
+                        <div class="quantity-container">
+                            <label for="amount">จำนวน :</label>
+                            <input type="number" id="amount" name="nescafe" min="1" max="100">
+                        </div>
+                        <input type="submit" value="Add to cart">
+                    </div>
+
+                    <div class="form2">
+                        <img src="image/rice.jpeg"> <br>
+                        <h2>Rice</h2>
+                        <p>฿159 /Piece</p>
+                        <div class="quantity-container">
+                            <label for="amount">จำนวน :</label>
+                            <input type="number" id="amount" name="rice" min="1" max="100">
+                        </div>
+                        <input type="submit" value="Add to cart">
+                    </div>
+                    <div class="form2">
+                        <img src="image/fanta.jpeg"> <br>
+                        <h2>Fanta</h2>
+                        <p>฿39 /Piece</p>
+                        <div class="quantity-container">
+                            <label for="amount">จำนวน :</label>
+                            <input type="number" id="amount" name="fanta" min="1" max="100">
+                        </div>
+                        <input type="submit" value="Add to cart">
+                    </div>
+
+                    <div class="form2">
+                        <img src="image/msg.jpeg"> <br>
+                        <h2>RosDee</h2>
+                        <p>฿40 /Piece</p>
+                        <div class="quantity-container">
+                            <label for="amount">จำนวน :</label>
+                            <input type="number" id="amount" name="msg" min="1" max="100">
+                        </div>
+                        <input type="submit" value="Add to cart">
+                    </div>
+                    <div class="form2">
+                        <img src="image/purra.jpeg"> <br>
+                        <h2>Mineral Water</h2>
+                        <p>฿90 /Piece</p>
+                        <div class="quantity-container">
+                            <label for="amount">จำนวน :</label>
+                            <input type="number" id="amount" name="purra" min="1" max="100">
+                        </div>
+                        <input type="submit" value="Add to cart">
+                    </div>
+                    <div class="form2">
+                        <img src="image/pocky.jpeg"> <br>
+                        <h2>Pocky</h2>
+                        <p>฿21 /Piece</p>
+                        <div class="quantity-container">
+                            <label for="amount">จำนวน :</label>
+                            <input type="number" id="amount" name="pocky" min="1" max="100">
+                        </div>
+                        <input type="submit" value="Add to cart">
+                    </div>
+                    
+                    <div class="form2">
+                        <img src="image/oyster.jpeg"> <br>
+                        <h2>Oyster Sauce</h2>
+                        <p>฿69 /Piece</p>
+                        <div class="quantity-container">
+                            <label for="amount">จำนวน :</label>
+                            <input type="number" id="amount" name="oyster" min="1" max="100">
+                        </div>
+                        <input type="submit" value="Add to cart">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="item-F item">
+            <footer>
+                <p>Contact us:
+                <address>123 Shopping Street, City Center, Thailand</address>
+                </p>
+            </footer>
+        </div>
+
+    </div>
+</body>
+
+</html>
